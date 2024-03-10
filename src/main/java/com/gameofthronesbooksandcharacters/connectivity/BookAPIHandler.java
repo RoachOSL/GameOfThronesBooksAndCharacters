@@ -16,7 +16,7 @@ public class BookAPIHandler {
     private final HttpClient client = HttpClient.newBuilder().build();
     private final String BOOKS_API_URL = "https://anapioficeandfire.com/api/books/";
 
-    public Optional<Book> getSingleBook(int bookNumber) {
+    public Optional<Book> fetchSingleBook(int bookNumber) {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(BOOKS_API_URL + "/" + bookNumber))
@@ -31,7 +31,7 @@ public class BookAPIHandler {
         return Optional.empty();
     }
 
-    public List<Book> getAllBook() {
+    public List<Book> fetchAllBook() {
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(BOOKS_API_URL + "?pageSize=50"))

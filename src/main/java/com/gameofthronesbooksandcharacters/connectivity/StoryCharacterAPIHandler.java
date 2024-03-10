@@ -5,9 +5,11 @@ import com.gameofthronesbooksandcharacters.mappers.StoryCharacterMapper;
 
 import java.io.IOException;
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
 public class StoryCharacterAPIHandler {
@@ -32,9 +34,9 @@ public class StoryCharacterAPIHandler {
 
     public Optional<StoryCharacter> getCharacterByName(String name) {
         try {
-            name = name.trim().replaceAll(" ", "%20");
+            String encodedName = URLEncoder.encode(name.trim(), StandardCharsets.UTF_8.name());
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(CHARACTERS_URL + "?name=" + name))
+                    .uri(URI.create(CHARACTERS_URL + "?name=" + encodedName))
                     .GET()
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

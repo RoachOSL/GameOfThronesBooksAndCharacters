@@ -32,12 +32,12 @@ class BookMapperTest {
                 """;
 
         BookAPIHandler bookAPIHandler = new BookAPIHandler();
-        System.out.println(bookAPIHandler.getSingleBook(1));
+        System.out.println(bookAPIHandler.fetchSingleBook(1));
 
         System.out.println("---".repeat(30));
 
 
-        System.out.println(bookAPIHandler.getAllBook());
+        System.out.println(bookAPIHandler.fetchAllBook());
 
     }
 

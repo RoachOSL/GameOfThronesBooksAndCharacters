@@ -16,6 +16,5 @@ class StoryCharacterAPIHandlerTest {
         System.out.println(storyCharacterAPIHandler.getCharacterByIndex(583));
         System.out.println(storyCharacterAPIHandler.getCharacterByName("Jon Snow"));
 
-
     }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Books list</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="back-button-container">
+    <a th:href="@{/mainPage}" class="view-books-button">Back To Main Page</a>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${booksList.isEmpty()}">
+            <td colspan="4">No Books Available</td>
+        </tr>
+        <tr th:each="book : ${booksList}">
+            <td th:text="${book.getName()}">Title</td>
+            <td th:text="${book.getAuthors()}">Author</td>
+            <td th:text="${book.getIsbn()}">ISBN</td>
+            <td><a th:href="@{/book(id=${booksList.indexOf(book) + 1})}">Details</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
