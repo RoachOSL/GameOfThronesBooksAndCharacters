@@ -9,21 +9,19 @@
 
 <div class="content-container">
 
-    <h1 th:text="${book.get().getName()}">Book Title</h1>
+    <h1 th:text="${book.name}">Book Title</h1>
 
     <div class="book-details">
-        <p th:text="'Author: ' + ${book.get().getAuthors()}"></p>
-        <p th:text="'ISBN: ' + ${book.get().getIsbn()}"></p>
-        <p th:text="'Country of Origin: ' + ${book.get().getCountryOfOrigin()}"></p>
-        <p th:text="'Date: ' + ${book.get().getDate()}"></p>
-        <p th:text="'Publisher: ' + ${book.get().getPublisher()}"></p>
-        <p th:text="'Numbers of Pages: ' + ${book.get().getNumberOfPages()}"></p>
+        <p th:text="'Author: ' + ${book.authors}"></p>
+        <p th:text="'ISBN: ' + ${book.isbn}"></p>
+        <p th:text="'Country of Origin: ' + ${book.countryOfOrigin}"></p>
+        <p th:text="'Date: ' + ${book.date}"></p>
+        <p th:text="'Publisher: ' + ${book.publisher}"></p>
+        <p th:text="'Numbers of Pages: ' + ${book.numberOfPages}"></p>
     </div>
 
     <div class="button-container">
         <a th:href="@{/}" class="view-books-button">Back to Main Page</a>
-    </div>
-    <div class="button-container">
         <a th:href="@{/books}" class="view-books-button">Back to Book List</a>
     </div>
 </div>

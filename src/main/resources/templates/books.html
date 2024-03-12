@@ -22,14 +22,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:if="${booksList.isEmpty()}">
+        <tr th:if="${booksList != null and booksList.isEmpty()}">
             <td colspan="4">No Books Available</td>
         </tr>
         <tr th:each="book : ${booksList}">
             <td th:text="${book.getName()}">Title</td>
             <td th:text="${book.getAuthors()}">Author</td>
             <td th:text="${book.getIsbn()}">ISBN</td>
-            <td><a th:href="@{/book(id=${booksList.indexOf(book) + 1})}">Details</a></td>
+            <td><a th:href="@{/book(id=${booksList.indexOf(book) + 1})}" class="details-link">Details</a></td>
         </tr>
         </tbody>
     </table>

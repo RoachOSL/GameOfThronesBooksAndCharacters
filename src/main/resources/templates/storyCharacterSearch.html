@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character Search</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="search-container">
+    <form action="#" th:action="@{/storyCharacterSearch}" th:object="${storyCharacterSearchObject}" method='post'>
+        <input type="text" th:field="*{name}" placeholder="Enter character name"/>
+        <button type="submit">Search</button>
+    </form>
+    <button class="lucky-guess-button"><a th:href="@{/storyCharacter}">Lucky guess</a></button>
+</div>
+</body>
+</html>

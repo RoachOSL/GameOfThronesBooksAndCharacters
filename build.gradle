@@ -25,7 +25,6 @@ dependencies {
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
 	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.16.1'
 	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.16.1'
-	implementation 'org.springframework.boot:spring-boot-devtools:3.2.3'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'

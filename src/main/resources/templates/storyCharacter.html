@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${storyCharacter.name}">Character Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="character-container">
+    <div class="character-header">
+        <h1 th:text="${storyCharacter.name}">Character Name</h1>
+    </div>
+
+    <div class="character-info">
+        <p><strong>Gender:</strong> <span th:text="${storyCharacter.gender}"></span></p>
+        <p><strong>Culture:</strong> <span th:text="${storyCharacter.culture}"></span></p>
+        <p><strong>Born:</strong> <span th:text="${storyCharacter.born}"></span></p>
+        <p><strong>Died:</strong> <span th:text="${storyCharacter.died}"></span></p>
+        <p><strong>Titles:</strong> <span th:each="title, iterStat : ${storyCharacter.titles}"
+                                          th:text="${title} + ${!iterStat.last ? ', ' : ''}"></span></p>
+        <p><strong>Aliases:</strong> <span th:each="alias, iterStat : ${storyCharacter.aliases}"
+                                           th:text="${alias} + ${!iterStat.last ? ', ' : ''}"></span></p>
+        <p><strong>TV Series:</strong> <span th:each="series, iterStat : ${storyCharacter.tvSeries}"
+                                             th:text="${series} + ${!iterStat.last ? ', ' : ''}"></span></p>
+        <p><strong>Books:</strong> <span th:each="book, iterStat : ${storyCharacter.books}"
+                                         th:text="${book} + ${!iterStat.last ? ', ' : ''}"></span></p>
+        <p><strong>Played By:</strong> <span th:each="actor, iterStat : ${storyCharacter.playedBy}"
+                                             th:text="${actor} + ${!iterStat.last ? ', ' : ''}"></span></p>
+    </div>
+
+    <div class="back-links">
+        <a href="/" class="back-link">Back to Main Page</a>
+        <a href="/storyCharacterSearch" class="back-link">Back to Search Character</a>
+        <a href="/storyCharacter" class="back-link">Roll Again</a>
+    </div>
+</div>
+
+</body>
+</html>
