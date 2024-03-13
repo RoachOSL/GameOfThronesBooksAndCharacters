@@ -25,15 +25,20 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity security) throws Exception {
         security
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/mainPage", "/index", "/register")
+                        .requestMatchers("/register", "/css/**", "/images/**")
                         .permitAll()
                         .anyRequest()
                         .authenticated())
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .usernameParameter("email")
-                        .defaultSuccessUrl("/books")
-                        .permitAll());
+                        .defaultSuccessUrl("/mainPage")
+                        .permitAll())
+                .logout((logout) -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login")
+                        .invalidateHttpSession(true)
+                        .deleteCookies("JSESSIONID"));
         return security.build();
     }
 
@@ -52,4 +57,5 @@ public class SecurityConfig {
         authenticationManagerBuilder.authenticationProvider(authProvider());
         return authenticationManagerBuilder.build();
     }
+
 }

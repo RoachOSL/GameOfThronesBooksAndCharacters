@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
 <div class="content-container">
     <h1>Welcome to the Realm of Ice and Fire</h1>
     <div class="intro">
@@ -16,6 +15,9 @@
         <a th:href="@{/books}" class="view-books-button">View Book List</a>
         <a th:href="@{/storyCharacterSearch}" class="view-books-button">Search for character</a>
         <a th:href="@{/storyCharacter}" class="view-books-button">Random character</a>
+        <form th:action="@{/logout}" method="post" class="view-books-button">
+            <input type="submit" class="view-books-button" value="Log Out"/>
+        </form>
     </div>
 </div>
 

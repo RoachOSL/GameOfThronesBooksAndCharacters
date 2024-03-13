@@ -1,6 +1,7 @@
 package com.gameofthronesbooksandcharacters.databaseutils;
 
 import com.gameofthronesbooksandcharacters.datamodel.CustomUser;
+import com.gameofthronesbooksandcharacters.exceptions.EmailExistsException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,13 +18,9 @@ public class CustomUserDao {
 
     public void saveUser(CustomUser customUser) {
         try (Session session = sessionFactory.openSession()) {
-            String hql = "FROM CustomUser WHERE email = :email";
-            Query<CustomUser> query = session.createQuery(hql, CustomUser.class);
-            query.setParameter("email", customUser.getEmail());
-            List<CustomUser> users = query.list();
-
-            if (!users.isEmpty()) {
-                throw new RuntimeException("A user with this email already exists.");
+            Optional<CustomUser> existingUserOptional = findUserByEmail(customUser.getEmail());
+            if (existingUserOptional.isPresent()) {
+                throw new EmailExistsException("A user with this email already exists.");
             }
 
             Transaction transaction = session.beginTransaction();

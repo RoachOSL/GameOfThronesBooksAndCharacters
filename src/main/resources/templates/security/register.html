@@ -6,15 +6,26 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<form th:action="@{/register}" th:object="${customUser}" method="post">
-    <input type="email" id="email" th:field="*{email}" placeholder="Email"/>
-    <label class="form-label" for="email">Email</label>
-    <input type="password" id="password" class="form-control" th:field="*{password}"
-           placeholder="Password"/>
-    <label class="form-label" for="password">Password</label>
-    <button type="submit" class="btn btn-primary btn-block mb-4">
-        Register
-    </button>
-</form>
+<div class="content-container">
+    <h1>Register</h1>
+    <div class="form-container register-container">
+        <form th:action="@{/register}" th:object="${customUser}" method="post" class="registration-form">
+            <div class="form-group">
+                <label class="form-label" for="email">Email:</label>
+                <input type="email" id="email" th:field="*{email}" placeholder="Email" required class="form-input"/>
+            </div>
+            <div class="error">
+                <span th:if="${emailExists}" class="error-message" th:text="${emailExists}">Email error message</span>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="password">Password:</label>
+                <input type="password" id="password" th:field="*{password}" placeholder="Password" required
+                       class="form-input"/>
+            </div>
+            <button type="submit" class="register-button">Register</button>
+        </form>
+        <a href="/login" class="register-button">Back to Login</a>
+    </div>
+</div>
 </body>
 </html>
