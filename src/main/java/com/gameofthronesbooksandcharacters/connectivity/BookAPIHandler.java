@@ -2,6 +2,7 @@ package com.gameofthronesbooksandcharacters.connectivity;
 
 import com.gameofthronesbooksandcharacters.datamodel.Book;
 import com.gameofthronesbooksandcharacters.mappers.BookMapper;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BookAPIHandler {
     private final HttpClient client = HttpClient.newBuilder().build();
     private final String BOOKS_API_URL = "https://anapioficeandfire.com/api/books/";

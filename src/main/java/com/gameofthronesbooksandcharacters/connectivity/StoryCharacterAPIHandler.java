@@ -2,6 +2,7 @@ package com.gameofthronesbooksandcharacters.connectivity;
 
 import com.gameofthronesbooksandcharacters.datamodel.StoryCharacter;
 import com.gameofthronesbooksandcharacters.mappers.StoryCharacterMapper;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,6 +13,7 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
+@Service
 public class StoryCharacterAPIHandler {
 
     private final HttpClient client = HttpClient.newBuilder().build();
