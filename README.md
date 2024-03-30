@@ -12,5 +12,16 @@ GameOfThronesGuide is a dynamic project created for enthusiasts of the "A Song o
 - **Exclusive Content for Registered Users**: A seamless experience awaits those who log in, unlocking the full potential of the app's features.
 - **Database Connectivity**: Powered by PostgreSQL, GameOfThronesGuide offers reliable and current data, providing the backbone for every query.
 
-GameOfThronesGuide is your personal Westeros companion, whether you're revisiting the series or delving into it for the first time. Explore detailed character backstories, discover new facets of the story, and lose yourself in the high fantasy world created by George R.R. Martin. It's not just an app; it's a portal to the world of ice and fire.
+## Technical Stack:
+
+- **Java**: The core programming language driving the backend logic and API integration.
+- **PostgreSQL**: A robust and scalable database holding the extensive data sets of the GOT universe.
+- **Spring Framework & Hibernate**: The backbone of the application, providing a solid foundation for building a high-performance web platform.
+- **Jackson**: For efficient data mapping and serialization to ensure that complex data structures are handled gracefully.
+  
+## Future Prospects:
+
+The vision for the GameOfThronesBooksAndCharacters is to evolve into a comprehensive community hub. Upcoming features include interactive maps of Westeros and Essos, community forums for fan discussions, and gamification elements to encourage educational exploration of the series’ content.
+
+GameOfThronesBooksAndCharacters is your personal Westeros companion, whether you're revisiting the series or delving into it for the first time. Explore detailed character backstories, discover new facets of the story, and lose yourself in the high fantasy world created by George R.R. Martin. It's not just an app; it's a portal to the world of ice and fire.
 
